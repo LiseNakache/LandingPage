@@ -1,11 +1,12 @@
 import React from 'react';
+import MainComponent from './MainComponent';
 
 class App extends React.Component {
   render() {
     return (
       <div>
         <br/>
-        Hello world!!
+        <MainComponent/>
       </div>
     );
   }

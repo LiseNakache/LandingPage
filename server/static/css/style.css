@@ -1,0 +1,13 @@
+*{box-sizing: border-box}
+
+.main {
+    border : 2px solid black
+}
+
+.about{
+    border : 2px solid blue
+}
+
+.email{
+    border : 2px solid red
+}
