@@ -10,10 +10,10 @@ class AppWrapper extends React.Component {
       <BrowserRouter>
         <div>
           <Header/>
-          <div className="container">
+          {/* <div className="container-fluid"> */}
             <Routes/>
           </div>
-        </div>
+        {/* </div> */}
       </BrowserRouter>
 
     );

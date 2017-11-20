@@ -1,4 +1,5 @@
 import React from 'react';
+import axios from 'axios'
 
 class EmailComponent extends React.Component {
     constructor(props) {
@@ -11,9 +12,19 @@ class EmailComponent extends React.Component {
 
     handleSubmit(event) {
         event.preventDefault();
-
-        // AXIOS.POST
+        axios.post('/', {
+            emailAdress: this.state.emailAdress
+        })
+            .then((response) => {
+                console.log(response.data)
+                // ENVOYER EMAIL A USER EMAIL
+                this.setState = { emailAdress: '' }
+            })
+            .catch(function (error) {
+                console.log(error);
+            });
     }
+
 
     handleChange(e) {
         this.setState({ [e.target.id]: e.target.value })
@@ -23,11 +34,13 @@ class EmailComponent extends React.Component {
     render() {
         return (
             <div className="email">
-                <h1>I'm the EMAIL component !!!!</h1>
+                <h3>Hurry Up, write down your email, to be the first to use the app!</h3>
                 <form onSubmit={this.handleSubmit}>
-                    <div className="form-inputs">
-                        <input className="input" id="emailAdress" type="email" required="true" placeholder="Your Email" value={this.state.emailAdress} onChange={this.handleChange} />
-                        <button className="btn">Add</button>
+                    <div className="form-inputs input-group">
+                        <input className="form-control" id="emailAdress" type="email" required="true" placeholder="Your Email" value={this.state.emailAdress} onChange={this.handleChange}/>
+                        <span className="input-group-btn">
+                        <button className="btn btn-default">Submit</button>
+                        </span>
                     </div>
                 </form>
             </div>
@@ -35,14 +48,5 @@ class EmailComponent extends React.Component {
     }
 }
 
+
 export default EmailComponent;
-
-
-{/* <input
-            className="input"
-            type="text"
-            id="title"
-            required="true"
-            value={this.state.title}
-            placeholder="Event Name"
-            onChange={this.handleChange} /> */}

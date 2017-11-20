@@ -1,13 +1,37 @@
-*{box-sizing: border-box}
+*{box-sizing: border-box;
+font-size: 16px;}
 
 .main {
-    border : 2px solid black
+    position: absolute;
+    top: 0; 
+    left: 0;
+    padding : 20px;
+}
+.logo {
+text-align: center;
+border : 1px solid orange;
+margin-bottom : 30px
+}
+
+.sentence{
+    text-align: center;
 }
 
 .about{
-    border : 2px solid blue
+    border : 2px solid blue;
 }
 
 .email{
-    border : 2px solid red
+    border : 2px solid blue;
 }
+
+
+
+.reason-join {
+    text-align: center;
+}
+.reason {
+    padding : 10px;
+}
+
+
